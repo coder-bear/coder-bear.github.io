@@ -187,6 +187,12 @@ ga('send', 'pageview');
 
 
     
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/" rel="tag">test</a></li></ul>
+
+    </div>
+    
   </article>
 </div>
 
@@ -340,23 +346,6 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
-
-<script>
-(function() {
-    var OriginTitile = document.title, titleTime;
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-            document.title = '';
-            clearTimeout(titleTime);
-        } else {
-            document.title = '';
-            titleTime = setTimeout(function() {
-                document.title = OriginTitile;
-            },2000);
-        }
-    });
-})();
-</script>
 
 
 
