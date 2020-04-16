@@ -31,18 +31,20 @@ ga('send', 'pageview');
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Leetcode, Bit manipulation, Leetcode_easy">
-    <meta name="description" content="This article offered two solutions on Leetcode 136, Single Number.  1. Problem descriptionGiven a non-empty array of integers, every element appears twice except for one. Find that single one.Requirem">
+    <meta name="keywords" content="Leetcode,Bit manipulation,Leetcode_easy">
+    <meta name="description" content="This article offered two solutions on Leetcode 136, Single Number. Problem description Given a non-empty array of integers, every element appears twice except for one. Find that single one. Requiremen">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode 136. Single Number">
 <meta property="og:url" content="http://coder-bear.github.io/2020/04/16/Leetcode-136-Single-Number/index.html">
 <meta property="og:site_name" content="Ziyao&#39;s Blog">
-<meta property="og:description" content="This article offered two solutions on Leetcode 136, Single Number.  1. Problem descriptionGiven a non-empty array of integers, every element appears twice except for one. Find that single one.Requirem">
+<meta property="og:description" content="This article offered two solutions on Leetcode 136, Single Number. Problem description Given a non-empty array of integers, every element appears twice except for one. Find that single one. Requiremen">
 <meta property="og:locale" content="zh">
 <meta property="article:published_time" content="2020-04-16T14:32:41.000Z">
-<meta property="article:modified_time" content="2020-04-16T15:12:25.704Z">
+<meta property="article:modified_time" content="2020-04-16T15:20:07.367Z">
 <meta property="article:author" content="Ziyao Yang">
-<meta property="article:tag" content="Leetcode, Bit manipulation, Leetcode_easy">
+<meta property="article:tag" content="Leetcode">
+<meta property="article:tag" content="Bit manipulation">
+<meta property="article:tag" content="Leetcode_easy">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="Ziyao&#39;s Blog" href="/atom.xml">
@@ -169,7 +171,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-Problem-description"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. Problem description</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-Solution"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. Solution</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-1-Solution-1-Set"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">2.1 Solution 1- Set</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-1-Thoughts"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">2.1.1 Thoughts</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-2-Code"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">2.1.2 Code</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-2-Analysis"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">2.1.2 Analysis</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-2-Solution-2-Magic-of-XOR"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.2 Solution 2-Magic of XOR</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-1-Thoughts"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">2.2.1 Thoughts</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-2-Code"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">2.2.2 Code</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-3-Analysis"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">2.2.3 Analysis</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-3-Future-Work"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">2.3 Future Work</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#problem-description"><span class="post-toc-number">1.</span> <span class="post-toc-text">Problem description</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#solution"><span class="post-toc-number">2.</span> <span class="post-toc-text">Solution</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#solution-1--set"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Solution 1- Set</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#thoughts"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">Thoughts</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#code"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">Code</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#analysis"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">Analysis</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#solution-2-magic-of-xor"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Solution 2-Magic of XOR</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#thoughts-1"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">Thoughts</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#code-1"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">Code</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#analysis-1"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">Analysis</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#future-work"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Future Work</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -193,14 +195,21 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>This article offered two solutions on Leetcode 136, Single Number. </p>
-<h1 id="1-Problem-description"><a href="#1-Problem-description" class="headerlink" title="1. Problem description"></a>1. Problem description</h1><p>Given a non-empty array of integers, every element appears twice except for one. Find that single one.<br><b>Requirement</b>: Linear runtine complexity<br><b>Bonus</b>: No extra memory</p>
-<h1 id="2-Solution"><a href="#2-Solution" class="headerlink" title="2. Solution"></a>2. Solution</h1><h2 id="2-1-Solution-1-Set"><a href="#2-1-Solution-1-Set" class="headerlink" title="2.1 Solution 1- Set"></a>2.1 Solution 1- Set</h2><h3 id="2-1-1-Thoughts"><a href="#2-1-1-Thoughts" class="headerlink" title="2.1.1 Thoughts"></a>2.1.1 Thoughts</h3><p>We use a set to solve the problem. First, we iterate elements in the array. If the set contains the specific element, then remove it. Otherwise, add this element to the set. In this way, the set only contains the element which only appears once. </p>
-<h3 id="2-1-2-Code"><a href="#2-1-2-Code" class="headerlink" title="2.1.2 Code"></a>2.1.2 Code</h3><pre>
+            <p>This article offered two solutions on Leetcode 136, Single Number.</p>
+<h1 id="problem-description">Problem description</h1>
+<p>Given a non-empty array of integers, every element appears twice except for one. Find that single one.<br>
+<b>Requirement</b>: Linear runtine complexity<br>
+<b>Bonus</b>: No extra memory</p>
+<h1 id="solution">Solution</h1>
+<h2 id="solution-1--set">Solution 1- Set</h2>
+<h3 id="thoughts">Thoughts</h3>
+<p>We use a set to solve the problem. First, we iterate elements in the array. If the set contains the specific element, then remove it. Otherwise, add this element to the set. In this way, the set only contains the element which only appears once.</p>
+<h3 id="code">Code</h3>
+<pre>
 import java.util.HashSet;
 
 class Solution {
-
+    
     public int singleNumber(int[] nums) {
         HashSet container = new HashSet ();
         for (int i=0; i &lt; nums.length; i++){
@@ -210,7 +219,7 @@ class Solution {
                 container.add(nums[i]);
             }
         }
-
+        
         Iterator value = container.iterator();
         int ans = -1;
         while(value.hasNext()){
@@ -218,14 +227,22 @@ class Solution {
         }
         return ans;
     }
-
+    
 }
 </pre>
-
-<h3 id="2-1-2-Analysis"><a href="#2-1-2-Analysis" class="headerlink" title="2.1.2 Analysis"></a>2.1.2 Analysis</h3><p>Run complexity: O(n)<br>Space complexity: O(n)<br>Cons: An ugly implementation when fetching the element from the HashSet</p>
-<h2 id="2-2-Solution-2-Magic-of-XOR"><a href="#2-2-Solution-2-Magic-of-XOR" class="headerlink" title="2.2 Solution 2-Magic of XOR"></a>2.2 Solution 2-Magic of XOR</h2><h3 id="2-2-1-Thoughts"><a href="#2-2-1-Thoughts" class="headerlink" title="2.2.1 Thoughts"></a>2.2.1 Thoughts</h3><p>Some rules about xor may help:<br>a xor a = 0<br>a xor b = b xor a<br>a xor 0 = a</p>
-<p>In this way, we can xor all of elements and the result will be the answer. For example, [5,1,2,1,2]1 xor 1 xor 2 xor 2 xor 5 = 0 xor 0 xor 5  = 5</p>
-<h3 id="2-2-2-Code"><a href="#2-2-2-Code" class="headerlink" title="2.2.2 Code"></a>2.2.2 Code</h3><pre>
+<h3 id="analysis">Analysis</h3>
+<p>Run complexity: O(n)<br>
+Space complexity: O(n)<br>
+Cons: An ugly implementation when fetching the element from the HashSet</p>
+<h2 id="solution-2-magic-of-xor">Solution 2-Magic of XOR</h2>
+<h3 id="thoughts-1">Thoughts</h3>
+<p>Some rules about xor may help:<br>
+a xor a = 0<br>
+a xor b = b xor a<br>
+a xor 0 = a</p>
+<p>In this way, we can xor all of elements and the result will be the answer. For example, [5,1,2,1,2]1 xor 1 xor 2 xor 2 xor 5 = 0 xor 0 xor 5 = 5</p>
+<h3 id="code-1">Code</h3>
+<pre>
 class Solution{
    public int singleNumber(int[] nums){
         for(int i=1; i&lt; nums.length; i++){
@@ -235,9 +252,12 @@ class Solution{
     }
 }
 </pre>
-
-<h3 id="2-2-3-Analysis"><a href="#2-2-3-Analysis" class="headerlink" title="2.2.3 Analysis"></a>2.2.3 Analysis</h3><p>Time complexity: O(n)<br>No extra space<br>A efficient solution!</p>
-<h2 id="2-3-Future-Work"><a href="#2-3-Future-Work" class="headerlink" title="2.3 Future Work"></a>2.3 Future Work</h2><p>Solve some bit wise problems, conclude some classic problems on bit wise problems and offer some routines of bit wise problems.</p>
+<h3 id="analysis-1">Analysis</h3>
+<p>Time complexity: O(n)<br>
+No extra space<br>
+A efficient solution!</p>
+<h2 id="future-work">Future Work</h2>
+<p>Solve some bit wise problems, conclude some classic problems on bit wise problems and offer some routines of bit wise problems.</p>
 
         </div>
 
@@ -246,7 +266,7 @@ class Solution{
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2020-04-16T15:12:25.704Z" itemprop="dateUpdated">2020-04-16 23:12:25</time>
+    Last updated: <time datetime="2020-04-16T15:20:07.367Z" itemprop="dateUpdated">2020-04-16 23:20:07</time>
 </span><br>
 
 
@@ -272,7 +292,7 @@ class Solution{
 
         <div class="post-footer">
             
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-Bit-manipulation-Leetcode-easy/" rel="tag">Leetcode, Bit manipulation, Leetcode_easy</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bit-manipulation/" rel="tag">Bit manipulation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode/" rel="tag">Leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leetcode-easy/" rel="tag">Leetcode_easy</a></li></ul>
 
 
             
